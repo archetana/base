@@ -52,6 +52,7 @@ COPY --from=builder /usr/local/lib/python3.7/site-packages /usr/local/lib/python
 COPY --from=builder /usr/local/bin /usr/local/bin
 COPY --from=builder /usr/bin/ /usr/bin
 COPY --from=builder /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu
+COPY --from=builder /lib/x86_64-linux-gnu /lib/x86_64-linux-gnu
 COPY --from=builder /usr/share /usr/share
 COPY --from=builder /opt /opt
 
