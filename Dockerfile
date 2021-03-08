@@ -49,6 +49,7 @@ RUN git clone git://git.samba.org/nss_wrapper.git /tmp/nss_wrapper && \
 
 FROM base
 COPY --from=builder /usr/local/lib64/lib /usr/local/lib
+COPY --from=builder /bin/ /bin
 COPY --from=builder /usr/local/lib/python3.7/site-packages /usr/local/lib/python3.7/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 COPY --from=builder /usr/bin/ /usr/bin
