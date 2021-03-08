@@ -3,6 +3,7 @@ FROM base as builder
 
 RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     apt-get update && apt-get install -y\
+    procps \
     ca-certificates \
     gnupg2 \
     curl \
