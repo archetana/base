@@ -2,7 +2,7 @@ FROM python:3.7-slim-buster as base
 FROM base as builder
 
 RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
-    apt-get update && apt-get install -y\
+    apt-get update &&  apt-get upgrade && apt-get install -y\
     procps \
     ca-certificates \
     gnupg2 \
