@@ -5,7 +5,7 @@ COPY requirements.txt /app/python/requirements.txt
 COPY install-pyrequirements.sh .
 
 RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
-    apt-get update && apt-get install -y \
+    apt-get update &&  apt-get upgrade && apt-get install -y\
     procps \
     ca-certificates \
     gnupg2 \
