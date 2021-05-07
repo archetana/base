@@ -14,5 +14,5 @@
 )
 
 # wrap command
-export LD_PRELOAD=/usr/local/lib/libnss_wrapper.so
+export LD_PRELOAD=/usr/local/lib64/lib/libnss_wrapper.so
 exec $@

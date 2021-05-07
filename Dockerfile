@@ -5,7 +5,7 @@ COPY requirements.txt /app/python/requirements.txt
 COPY install-pyrequirements.sh .
 
 RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
-    apt-get update &&  apt-get upgrade && apt-get install -y\
+    apt-get update &&  apt-get upgrade -y && apt-get install -y\
     procps \
     ca-certificates \
     gnupg2 \
@@ -44,27 +44,14 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     make install && \
     rm -rf /tmp/nss_wrapper
 
-
-FROM base
-COPY --from=builder /usr/local/lib64/lib /usr/local/lib
-COPY --from=builder /bin/ /bin
-COPY --from=builder /usr/local/lib/python3.7/site-packages /usr/local/lib/python3.7/site-packages
-COPY --from=builder /usr/local/bin /usr/local/bin
-COPY --from=builder /usr/bin/ /usr/bin
-COPY --from=builder /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu
-COPY --from=builder /lib/x86_64-linux-gnu /lib/x86_64-linux-gnu
-COPY --from=builder /usr/share /usr/share
-COPY --from=builder /opt /opt
-COPY --from=builder /usr/lib/node_modules /usr/lib/node_modules
-
-ADD spark-defaults.conf /usr/local/lib/python3.7/site-packages/pyspark/conf/spark-defaults.conf
+ADD spark-defaults.conf /venv/lib/python3.7/site-packages/pyspark/conf/spark-defaults.conf
   
 ENV USER_NAME=root \
     NSS_WRAPPER_PASSWD=/tmp/passwd \
     NSS_WRAPPER_GROUP=/tmp/group \
     HOME=/tmp \
-    SPARK_HOME=/usr/local/lib/python3.7/site-packages/pyspark \
-    PYTHONPATH=/usr/local/lib/python3.7/site-packages
+    SPARK_HOME=/venv/lib/python3.7/site-packages/pyspark \
+    PYTHONPATH=/venv/lib/python3.7/site-packages
 
 RUN chgrp -R 0 /tmp/ && \
     chmod -R g=u /tmp/  && \
