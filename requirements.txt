@@ -14,4 +14,8 @@ mleap
 pmdarima
 mlflow
 zeep
-pyodbc 
+pyodbc
+spacy
+pytextrank
+ecs_logging
+elasticsearch 

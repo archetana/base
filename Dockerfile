@@ -36,6 +36,11 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     nodejs &&\
     npm install --global yarn &&\
     ./install-pyrequirements.sh &&\
+    wget https://mirrors.estointernet.in/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz &&\
+    tar xvf apache-maven-3.8.1-bin.tar.gz &&\
+    mv apache-maven-3.8.1 /usr/local/lib/maven &&\
+    ln -s /usr/local/lib/maven/bin/mvn /usr/bin/mvn &&\
+    rm apache-maven-3.8.1-bin.tar.gz &&\
     git clone git://git.samba.org/nss_wrapper.git /tmp/nss_wrapper && \
     mkdir /tmp/nss_wrapper/build && \
     cd /tmp/nss_wrapper/build && \
