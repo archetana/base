@@ -18,4 +18,9 @@ pyodbc
 spacy
 pytextrank
 ecs_logging
-elasticsearch 
+elasticsearch
+pytesseract
+ast
+pypdf2
+pytesseract
+tesseract-ocr
