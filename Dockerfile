@@ -10,10 +10,10 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     ca-certificates \
     gnupg2 \
     curl \
-    g++ \
     wget \
     unixodbc-dev \
     build-essential \
+    g++ \
     cmake \
     git \
     openssh-client \
