@@ -19,6 +19,3 @@ spacy
 pytextrank
 ecs_logging
 elasticsearch
-pypdf2
-pytesseract
-tesseract-ocr
