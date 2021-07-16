@@ -17,6 +17,11 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     g++ \
     cmake \
     git \
+    xlrd \
+    openpyxl \
+    docx \
+    docx2txt \
+    win32com.client \
     openssh-client \
     libenchant1c2a \
     tesseract-ocr && \ 
