@@ -19,3 +19,4 @@ spacy
 pytextrank
 ecs_logging
 elasticsearch
+pytesseract
