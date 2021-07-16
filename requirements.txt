@@ -20,3 +20,7 @@ pytextrank
 ecs_logging
 elasticsearch
 pytesseract
+xlrd 
+openpyxl 
+docx
+docx2txt 
