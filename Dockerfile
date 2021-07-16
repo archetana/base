@@ -8,7 +8,6 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     apt-get update &&  apt-get upgrade -y && apt-get install -y\
     curl \
     wget && \
-    apt-transport-https \
     procps \
     ca-certificates \
     gnupg2 \
