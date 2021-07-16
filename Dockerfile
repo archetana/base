@@ -5,12 +5,9 @@ COPY requirements.txt /app/python/requirements.txt
 COPY install-pyrequirements.sh .
 
 RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
-    echo "deb https://notesalexp.org/tesseract-ocr/buster/ buster main" >> /etc/apt/sources.list && \
     apt-get update &&  apt-get upgrade -y && apt-get install -y\
     curl \
     wget && \
-    wget -O - https://notesalexp.org/debian/alexp_key.asc | apt-key add - && \
-    apt-get update &&  apt-get upgrade -y && apt-get install -y\
     apt-transport-https \
     procps \
     ca-certificates \
