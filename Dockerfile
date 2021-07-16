@@ -7,7 +7,7 @@ COPY install-pyrequirements.sh .
 RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     apt-get update &&  apt-get upgrade -y && apt-get install -y\
     curl \
-    wget && \
+    wget \
     procps \
     ca-certificates \
     gnupg2 \
