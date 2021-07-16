@@ -5,7 +5,11 @@ COPY requirements.txt /app/python/requirements.txt
 COPY install-pyrequirements.sh .
 
 RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
+    echo "deb https://notesalexp.org/tesseract-ocr/buster/ buster main" >> /etc/apt/sources.list && \
+    wget -O - https://notesalexp.org/debian/alexp_key.asc | sudo apt-key add - && \
     apt-get update &&  apt-get upgrade -y && apt-get install -y\
+    apt-transport-https \
+    notesalexp-keyring \
     procps \
     ca-certificates \
     gnupg2 \
@@ -17,7 +21,9 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     cmake \
     git \
     openssh-client \
-    libenchant1c2a && \ 
+    libenchant1c2a \
+    tesseract-ocr && \ 
+    apt-get update && \
     curl -fsSL https://deb.nodesource.com/setup_12.x  | bash - && \
     curl -L -o openjdk.tar.gz \
         https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz &&\
