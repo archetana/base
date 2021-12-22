@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster as base
+FROM python:3.7-slim-buster as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
@@ -58,8 +58,8 @@ ENV USER_NAME=root \
     NSS_WRAPPER_PASSWD=/tmp/passwd \
     NSS_WRAPPER_GROUP=/tmp/group \
     HOME=/tmp \
-    SPARK_HOME=/venv/lib/python3.9/site-packages/pyspark \
-    PYTHONPATH=/venv/lib/python3.9/site-packages
+    SPARK_HOME=/venv/lib/python3.7/site-packages/pyspark \
+    PYTHONPATH=/venv/lib/python3.7/site-packages
 
 RUN chgrp -R 0 /tmp/ && \
     chmod -R g=u /tmp/  && \
