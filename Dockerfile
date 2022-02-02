@@ -1,4 +1,4 @@
-FROM python:3.7.12-slim-buster as base
+FROM python:3.9.10-slim-buster as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
