@@ -52,14 +52,14 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     make install && \
     rm -rf /tmp/nss_wrapper
 
-ADD spark-defaults.conf /venv/lib/python3.7/site-packages/pyspark/conf/spark-defaults.conf
+ADD spark-defaults.conf /venv/lib/python3.9/site-packages/pyspark/conf/spark-defaults.conf
   
 ENV USER_NAME=root \
     NSS_WRAPPER_PASSWD=/tmp/passwd \
     NSS_WRAPPER_GROUP=/tmp/group \
     HOME=/tmp \
-    SPARK_HOME=/venv/lib/python3.7/site-packages/pyspark \
-    PYTHONPATH=/venv/lib/python3.7/site-packages
+    SPARK_HOME=/venv/lib/python3.9/site-packages/pyspark \
+    PYTHONPATH=/venv/lib/python3.9/site-packages
 
 RUN chgrp -R 0 /tmp/ && \
     chmod -R g=u /tmp/  && \
