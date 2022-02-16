@@ -50,7 +50,8 @@ RUN sed -i '/messagebus /d' /var/lib/dpkg/statoverride && \
     cmake -DCMAKE_INSTALL_PREFIX=/usr/local/lib64 .. && \
     make && \
     make install && \
-    rm -rf /tmp/nss_wrapper
+    rm -rf /tmp/nss_wrapper && \
+    apt-get update &&  apt-get upgrade -y 
 
 ADD spark-defaults.conf /venv/lib/python3.9/site-packages/pyspark/conf/spark-defaults.conf
   
