@@ -19,7 +19,7 @@ RUN touch /var/lib/dpkg/statoverride && \
     cmake \
     git \
     openssh-client \
-    libenchant1c2a \
+    libenchant-2-2 \
     tesseract-ocr && \ 
     apt-get update && \
     curl -fsSL https://deb.nodesource.com/setup_12.x  | bash - && \
