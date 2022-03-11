@@ -1,4 +1,4 @@
-FROM python:3.9.10-slim-bullseye as base
+FROM archetan/python3.9.10-slim-bookworm:latest as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
