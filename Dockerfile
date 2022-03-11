@@ -35,7 +35,7 @@ RUN touch /var/lib/dpkg/statoverride && \
     jlink --version &&\
     curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - &&\
     curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list &&\
-    echo 'http://deb.debian.org/debian bullseye-backports main contrib non-free' > /etc/apt/sources.list.d/backports.list &&\
+    echo 'deb http://deb.debian.org/debian bullseye-backports main contrib non-free' > /etc/apt/sources.list.d/backports.list &&\
     apt-get update && ACCEPT_EULA=Y apt-get install -y \
     msodbcsql17 \
     nodejs &&\
