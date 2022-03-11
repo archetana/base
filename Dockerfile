@@ -1,4 +1,4 @@
-FROM archetan/python3.9.10-slim-bookworm:latest as base
+FROM quay.io/archetan/python3.9.10-slim-bookworm:latest as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
