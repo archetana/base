@@ -2,7 +2,7 @@ cython
 pyhocon
 dill
 apispec
-pyspark==3.0.3
+pyspark==3.2.1
 mysql-connector-python
 scp
 nltk
