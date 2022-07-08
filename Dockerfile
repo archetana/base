@@ -1,4 +1,4 @@
-FROM python:3.9-slim-bullseye as base
+FROM python:3.10-slim-bullseye as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
@@ -37,9 +37,7 @@ RUN touch /var/lib/dpkg/statoverride && \
     curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list &&\
     echo 'deb http://deb.debian.org/debian bullseye-backports main contrib non-free' > /etc/apt/sources.list.d/backports.list &&\
     apt-get update && ACCEPT_EULA=Y apt-get install -y \
-    msodbcsql17 \
-    nodejs &&\
-    npm install --global yarn &&\
+    msodbcsql17 &&\
     ./install-pyrequirements.sh &&\
     wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz &&\
     tar xvf apache-maven-3.8.6-bin.tar.gz &&\
