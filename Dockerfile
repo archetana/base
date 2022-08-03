@@ -1,4 +1,4 @@
-FROM python:3.10-slim-bullseye as base
+FROM python:3.11.0b5-slim-bullseye as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
