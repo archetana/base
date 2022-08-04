@@ -24,3 +24,4 @@ xlrd
 openpyxl 
 docx
 docx2txt 
+lxml==4.9.1
