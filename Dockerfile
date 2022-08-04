@@ -54,7 +54,6 @@ RUN touch /var/lib/dpkg/statoverride && \
     apt-get update &&  apt-get upgrade -y 
 
 ADD spark-defaults.conf /venv/lib/python3.10/site-packages/pyspark/conf/spark-defaults.conf
-apt -get remove curl -y
   
 ENV USER_NAME=root \
     NSS_WRAPPER_PASSWD=/tmp/passwd \
