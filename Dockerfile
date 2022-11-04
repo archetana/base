@@ -23,27 +23,13 @@ RUN touch /var/lib/dpkg/statoverride && \
     tesseract-ocr && \ 
     apt-get update && \
     curl -fsSL https://deb.nodesource.com/setup_12.x  | bash - && \
-    curl -L -o openjdk.tar.gz \
-        https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz &&\
-    mkdir -p /opt/jdk &&\
-    tar zxf openjdk.tar.gz -C /opt/jdk --strip-components=1 &&\
-     rm -rf openjdk.tar.gz &&\
-    ln -sf /opt/jdk/bin/* /usr/local/bin/ &&\
     rm -rf /var/lib/apt/lists/* &&\
-    java  --version &&\
-    javac --version &&\
-    jlink --version &&\
     curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - &&\
     curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list &&\
     echo 'deb http://deb.debian.org/debian bullseye-backports main contrib non-free' > /etc/apt/sources.list.d/backports.list &&\
     apt-get update && ACCEPT_EULA=Y apt-get install -y \
     msodbcsql17 &&\
     ./install-pyrequirements.sh &&\
-    wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz &&\
-    tar xvf apache-maven-3.8.6-bin.tar.gz &&\
-    mv apache-maven-3.8.6 /usr/local/lib/maven &&\
-    ln -s /usr/local/lib/maven/bin/mvn /usr/bin/mvn &&\
-    rm apache-maven-3.8.6-bin.tar.gz &&\
     git clone git://git.samba.org/nss_wrapper.git /tmp/nss_wrapper && \
     mkdir /tmp/nss_wrapper/build && \
     cd /tmp/nss_wrapper/build && \
