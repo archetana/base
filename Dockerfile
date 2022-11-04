@@ -75,3 +75,4 @@ RUN chgrp -R 0 /tmp/ && \
 COPY nss-wrap.sh /nss-wrap.sh
 
 ENTRYPOINT ["/nss-wrap.sh"]
+
