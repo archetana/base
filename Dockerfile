@@ -1,4 +1,4 @@
-FROM python:3.10.9-slim-bullseye as base
+FROM acridp.azurecr.io/docker-local/cyber-central/cyberwatch:test44 as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
