@@ -1,4 +1,4 @@
-FROM acridp.azurecr.io/docker-local/cyber-central/cyberwatch:test44 as base
+FROM infyartifactory.ad.infosys.com:443/docker/openjdk:11.0.16-jdk as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
