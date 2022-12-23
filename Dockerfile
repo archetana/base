@@ -1,4 +1,4 @@
-FROM infyartifactory.ad.infosys.com:443/docker/openjdk:11.0.16-jdk as base
+FROM python:3.12.0a3-slim-bullseye as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
