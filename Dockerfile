@@ -1,4 +1,4 @@
-FROM python:3.12.0a3-slim-bullseye as base
+FROM python:3.10-slim-bullseye as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
@@ -39,11 +39,11 @@ RUN touch /var/lib/dpkg/statoverride && \
     apt-get update && ACCEPT_EULA=Y apt-get install -y \
     msodbcsql17 &&\
     ./install-pyrequirements.sh &&\
-    wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz &&\
-    tar xvf apache-maven-3.8.6-bin.tar.gz &&\
-    mv apache-maven-3.8.6 /usr/local/lib/maven &&\
+    wget https://dlcdn.apache.org/maven/maven-3/3.8.7/binaries/apache-maven-3.8.7-bin.tar.gz &&\
+    tar xvf apache-maven-3.8.7-bin.tar.gz &&\
+    mv apache-maven-3.8.7 /usr/local/lib/maven &&\
     ln -s /usr/local/lib/maven/bin/mvn /usr/bin/mvn &&\
-    rm apache-maven-3.8.6-bin.tar.gz &&\
+    rm apache-maven-3.8.7-bin.tar.gz &&\
     git clone git://git.samba.org/nss_wrapper.git /tmp/nss_wrapper && \
     mkdir /tmp/nss_wrapper/build && \
     cd /tmp/nss_wrapper/build && \
