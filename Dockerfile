@@ -40,10 +40,10 @@ RUN touch /var/lib/dpkg/statoverride && \
     msodbcsql17 &&\
     ./install-pyrequirements.sh &&\
     wget https://dlcdn.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.tar.gz &&\
-    tar xvf apache-maven-3.8.7-bin.tar.gz &&\
-    mv apache-maven-3.8.7 /usr/local/lib/maven &&\
+    tar xvf apache-maven-3.9.2-bin.tar.gz &&\
+    mv apache-maven-3.9.2 /usr/local/lib/maven &&\
     ln -s /usr/local/lib/maven/bin/mvn /usr/bin/mvn &&\
-    rm apache-maven-3.8.7-bin.tar.gz &&\
+    rm apache-maven-3.9.2-bin.tar.gz &&\
     git clone git://git.samba.org/nss_wrapper.git /tmp/nss_wrapper && \
     mkdir /tmp/nss_wrapper/build && \
     cd /tmp/nss_wrapper/build && \
