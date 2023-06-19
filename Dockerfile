@@ -39,7 +39,7 @@ RUN touch /var/lib/dpkg/statoverride && \
     apt-get update && ACCEPT_EULA=Y apt-get install -y \
     msodbcsql17 &&\
     ./install-pyrequirements.sh &&\
-    wget https://dlcdn.apache.org/maven/maven-3/3.8.7/binaries/apache-maven-3.8.7-bin.tar.gz &&\
+    wget https://dlcdn.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.tar.gz &&\
     tar xvf apache-maven-3.8.7-bin.tar.gz &&\
     mv apache-maven-3.8.7 /usr/local/lib/maven &&\
     ln -s /usr/local/lib/maven/bin/mvn /usr/bin/mvn &&\
