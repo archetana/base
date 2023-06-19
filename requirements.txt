@@ -13,7 +13,6 @@ dagster==0.7.16
 paramiko
 mleap
 pmdarima
-mlflow
 zeep
 pyodbc
 spacy
