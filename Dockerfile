@@ -1,4 +1,4 @@
-FROM python:3.10.12-slim-bookworm as base
+FROM python:3.11.4-slim-bookworm as base
 FROM base as builder
 
 COPY requirements.txt /app/python/requirements.txt
