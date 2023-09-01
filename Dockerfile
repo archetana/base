@@ -38,7 +38,6 @@ RUN touch /var/lib/dpkg/statoverride && \
     echo 'deb http://deb.debian.org/debian bullseye-backports main contrib non-free' > /etc/apt/sources.list.d/backports.list &&\
     apt-get update && ACCEPT_EULA=Y apt-get install -y \
     msodbcsql17 &&\
-    ./install-pyrequirements.sh &&\
     wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz &&\
     tar xvf apache-maven-3.9.4-bin.tar.gz &&\
     mv apache-maven-3.9.4 /usr/local/lib/maven &&\
